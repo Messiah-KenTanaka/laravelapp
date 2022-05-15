@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +21,6 @@ Route::get('/', function () {
 // Route::get('hello', [HelloController::class, 'index']);
 // Route::get('hello', 'App\Http\Controllers\HelloController');
 
-// Route::get('hello/other', 'App\Http\Controllers\HelloController@other');
 Route::get('hello', 'App\Http\Controllers\HelloController@index');
+
+Route::post('hello', 'App\Http\Controllers\HelloController@post');
