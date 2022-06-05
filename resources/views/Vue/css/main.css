@@ -1,0 +1,11 @@
+p {
+    color: red;
+}
+
+#app ul{
+    list-style: none;
+}
+
+#app li > span.done {
+    text-decoration: line-through;
+}
