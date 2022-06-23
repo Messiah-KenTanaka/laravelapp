@@ -1,21 +1,21 @@
 @extends('layouts.helloapp')
 
-@section('title', 'Person.index')
+@section('title', 'Board.index')
 
 @section('menuber')
     @parent
-    インデックスページ
+    ボードページ
 @endsection
 
 @section('content')
     <table>
-        <tr><th>Message</th><th>Name</th></tr>
+        <tr><th>Data</th></tr>
         @foreach ($items as $item)
             <tr>
-                <td>{{ $item->message }}</td>
-                <td>{{ $item->person->name }}</td>
+                <td>{{ $item->getData() }}</td>
             </tr>
         @endforeach
+    </table>
 @endsection
 
 @section('footer')

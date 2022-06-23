@@ -8,7 +8,19 @@
 @endsection
 
 @section('content')
+    @if (Auth::check())
+        <p>USER: {{ $user->name . ' (' . $user->email . ')' }}</p>
+    @else
+        <p>*ログインしていません(<a href="/login">ログイン</a>|
+            <a href="/register">登録</a>)
+        </p>
+    @endif
     <table>
+        <tr>
+            <th><a href="/hello?sort=name">name</a></th>
+            <th><a href="/hello?sort=mail">mail</a></th>
+            <th><a href="/hello?sort=age">age</a></th>
+        </tr>
         <tr>
             <th>Name</th>
             <th>Mail</th>
@@ -22,4 +34,5 @@
             @endforeach
         </tr>
     </table>
+    {{ $items->appends(['sort' => $sort])->links() }}
 @endsection

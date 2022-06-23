@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(peppleTableSeeder::class);
+        $this->call(PeppleTableSeeder::class);
+        $this->call(RestdataTableSeeder::class);
     }
 }
